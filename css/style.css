@@ -11,11 +11,13 @@ body{
     font-family: "Raleway", serif;                              
 }
 
+
+
+/*---------------------------------Estilos Header-------------------------------*/
 nav{
     display: flex;
     justify-content: space-between;
     padding: 0.5rem 1.5rem;
-
 }
 
 a{
@@ -36,13 +38,11 @@ nav ul{
 }
 
 .nav-links a:hover {
-    background-color: #8b9cb1; /* Nuevo color de fondo al pasar el mouse */
+    background-color: #8b9cb1; 
     color: #000000;
     padding: 0.5rem 0.7rem;
-    border-radius: 15%; /* Nuevo color del texto al pasar el mouse */
+    border-radius: 15%;
 }
-
-
 
 .nav-icons{
     display: flex;
@@ -57,8 +57,6 @@ nav ul{
     width: 2rem;
 }
 
-
-
 .logo{
     width: 20%;
     display: flex;
@@ -70,12 +68,52 @@ nav ul{
 }
 
 
+/*MediaQueries - Navegacion Header--------------------------------*/
+
+/*Para tablet*/
+@media (max-width:769px) {
+    nav{
+        flex-wrap: wrap;
+    }
+
+    .logo{
+        flex-basis: 50%;
+    }
+
+    .nav-links{
+        justify-content: space-between;
+        order: 3;
+        flex-basis: 100%;
+        font-size: 3vw;
+        margin: 0.5rem 0;
+    }
+
+    .nav-links li{
+        flex-shrink: 1;
+    }
+
+    .nav-icons{
+        order: 2;
+        flex-basis: 50%;
+    }
+}
+
+/*Para celulares*/
+@media (max-width:480px) {
+    .nav-links{
+        flex-direction: column;
+        font-size: 6vw;
+        align-items: start;
+        gap: 1rem;
+    }
+    
+}
+
+
+
 .background-container{
     display: flex;
     flex-direction: column;
-    /*
-    background-image: url("https://www.supercars.net/blog/wp-content/uploads/2024/01/2024-Tesla-Cybertruck-003-2160-1400x788.jpg");
-    */
     background-image: url("../img/img-principal.jpg");
     height: 100vh;
     background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
@@ -127,12 +165,44 @@ nav ul{
     background-color: rgba(17, 18, 20, 0.5);
 }
 
+
+/*MediaQueries - Hero Header--------------------------------*/
+/*Para tablet*/
+@media (max-width:769px) {
+    .buttons{
+        flex-direction: column;
+        width: 70%;
+        gap: 1rem;
+    }
+    .buttons a{
+        text-align: center;
+        border-radius: 7px;
+        font-size: 1.2rem;
+    }
+}
+
+/*Para celulares*/
+@media (max-width:480px) {
+    .buttons a{
+        text-align: center;
+        border-radius: 7px;
+        font-size: 1.2rem;
+    }
+}
+
+
+
+
+/*-----------------------------------Estilos Main-------------------------------*/
+
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 7rem;
 }
+
+/*Estilos Main > Product Info-------------------------------*/
 
 .product-info{
     width: 80%;
@@ -141,7 +211,7 @@ main {
     flex-direction: column;
     margin-top: 7rem;
     padding: 0.5rem;
-    border: 2.5px #1a1b1c solid;
+    border: 2.5px hwb(210 10% 89%) solid;
     clip-path: polygon(0 0, 94% 0, 100% 6%, 100% 94%, 94% 100%,  6% 100%, 0 94%, 0% 20%);
 }
 
@@ -170,7 +240,69 @@ main {
     font-size: 0.8rem;
     width: 70%;
 }
+/*MediaQueries Tablets-------*/
+@media (max-width:769px) {
 
+    .product-info{
+        width: 85%;
+    }
+    .product-info-text{
+        flex-wrap: wrap;
+    }
+
+    .product-info-text>p{
+        flex-basis: 100%;
+        line-height: 2;
+        font-size: 1.2rem;
+    }
+
+    .product-info-text h2{
+        flex-basis: content;
+    }
+
+    .product-info-text span{
+        flex-basis: content;
+    }
+}
+
+/*MediaQueries celulares------*/
+@media (max-width:480px) {
+    .product-info{
+        width: 90%;
+    }
+
+    .product-info-img{
+        height: 40vh;
+        object-fit: cover;
+    }
+
+    .product-info-text{
+        flex-direction: column;
+        align-items: start;
+        padding: 1rem;
+        gap: 0.5rem;
+    }
+
+    .product-info-text span{
+        width: 100%;
+    }
+
+    .product-info-text h2{
+        width: 100%;
+    }
+
+    .product-info-text p{
+        width: 100%;
+    }
+
+
+    .linea-vertical{
+        display: none;
+    }
+}
+
+
+/*Estilos Main > Product Dimensions-------------------------------*/
 .container-lineas-horizontal{
     display:flex;
     flex-direction: column;
@@ -217,6 +349,98 @@ main {
     width: 100%;
 }
 
+/*MediaQueries tablets------*/
+@media (max-width:800px) {
+
+    .container-lineas-horizontal{
+        width: 85%;
+    }
+
+    .product-dimensions img{
+        width: 50%;
+        height: 50%;
+    }
+
+    .celda{
+    width: 35%;
+    font-size: 1.2rem;
+}
+}
+
+/*MediaQueries celulares------*/
+@media (max-width:600px) {
+    .product-dimensions{
+        flex-direction: column;
+    }
+
+    .product-dimensions-info{
+        order: 2;
+       
+    }
+
+    .product-dimensions img{
+        order: 1;
+        width: 90%;
+        height: 90%;
+        margin: 0.8rem 0;
+    }
+}
+
+/*Estilos Main > Gallery Product-------------------------------*/
+
+.section-gallery-product{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    padding: 0.5rem;
+    border: 2.5px hwb(210 10% 89%) solid;
+    clip-path: polygon(0 0, 94% 0, 100% 6%, 100% 94%, 94% 100%,  6% 100%, 0 94%, 0% 20%);  
+}
+
+.section-gallery-product>h2{
+    margin: 1rem 0;
+}
+
+.gallery-product{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.gallery-product>img{
+    width: 25vw;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transiciones suaves para transform y opacity */
+}
+
+.gallery-product>img:hover {
+    transform: scale(1.1); /* Expande la imagen al 110% */
+    opacity: 0.5; /* Reduce la opacidad al 80% */
+}
+
+/*MediaQueries tablets------*/
+@media (max-width:1150px) {
+
+    .section-gallery-product{
+        width: 85%;
+    }
+
+    .gallery-product>img{
+        width: 40vw;
+    }
+}
+
+
+/*MediaQueries celulares------*/
+@media (max-width:720px) {
+  
+    .gallery-product>img{
+        width: 80vw;
+    }
+}
+
+/*Estilos Main > Coverage Areas-------------------------------*/
 .coverage-areas{
     display: flex;
     flex-direction: column;
@@ -244,6 +468,29 @@ main {
     gap:1rem;
 }
 
+/*MediaQueries tablets------*/
+@media (max-width:800px) {
+    .container-areas>div{
+        width: 30%;
+    }
+}
+
+/*MediaQueries celulares------*/
+@media (max-width:600px) {
+    .container-areas{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-areas>div{
+        width: 70%;
+        font-size: 1.5rem;
+    }
+
+}
+
+/*Estilos Main > Precios-------------------------------*/
+
 .types-shipping{
     display: flex;
     width: 100%;
@@ -258,13 +505,13 @@ main {
 
 .container-shiping{
     height: 60%;
-    width: 20%;
+    width: 25vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     background-color: rgba(26, 27, 28, 0.8);
-    padding: 3rem 2.5rem;
+    padding: 2rem 2.5rem;
 }
 
 .container-shiping-text{
@@ -273,7 +520,7 @@ main {
     align-items: center; 
 }
 .pricing{
-    font-size: 3rem;
+    font-size: 4vw;
     color: whitesmoke;
     margin: 0.5rem 0 1rem 0;
 }
@@ -287,6 +534,7 @@ main {
 .container-shiping a{
     padding: 0.6rem 3rem;
     border:1px whitesmoke solid;
+    text-align: center;
 }
 
 .container-shiping a:hover{
@@ -294,12 +542,38 @@ main {
     color: black;
 }
 
+@media (max-width:1000px) {
+    .types-shipping{
+        justify-content: center;
+        gap: 5vw;
+    }
+    
+}
 
+@media (max-width:900px) {
+    .types-shipping{
+        flex-direction: column;
+    }
+    .container-shiping{
+        height: auto;
+        width: 80%;
+        padding: 1rem;
+    }
+    .container-shiping>a{
+        margin: 1rem 0;
+        font-size: 1.3rem;
+    }
+    .pricing{
+        font-size: 2rem;
+    }
+}
 
+/*-----------------------------Estilos Footer-------------------------------*/
 .footer {
     background-color: #1a1a1a;
     color: #ffffff;
     padding: 40px 20px;
+    width: 100vw;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -307,10 +581,6 @@ main {
     
 }
 
-.footer>div {
-    flex: 1;
-    min-width: 250px;
-}
 
 .footer h3 {
     font-size: 1.3rem;
@@ -318,7 +588,7 @@ main {
 }
 
 .footer-social>p{
-    margin-bottom: 1rem;
+    margin: 1rem 0;
 }
 
 #logo-footer{
@@ -330,11 +600,10 @@ main {
     display: flex;
     justify-content: start;
     gap: 1rem;
-
 }
 
 .social-icons a{
-    width: 8%;
+    width: 2.5vw;
 }
 
 .contact-enlaces{
@@ -353,10 +622,37 @@ main {
 }
 
 
-@media (max-width: 768px) {
-    .footer {
+@media (max-width: 900px) {
+    .footer-social{
+        width: 100%;
+        display: flex;
         flex-direction: column;
         align-items: center;
-        text-align: center;
+    }
+    .social-icons a{
+        width: 4vw;
+    }
+
+    .footer-contact,.footer-links{
+        flex-basis: 45%;
     }
 }
+
+@media (max-width: 480px) {
+    footer{
+        flex-direction: column;
+        
+    }
+
+    .footer-links h3{
+        display: none;
+    }
+    .footer-links ul{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 2;
+    }
+}
+

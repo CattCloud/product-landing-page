@@ -51,3 +51,37 @@ Se han aplicado las siguientes pautas de accesibilidad:
 - Dimensiones: Se priorizaron las unidades relativas (rem,%)
 - Nombres descriptivos a las clases o id de los elementos HTML para mayor facilidad de identificacion en CSS
 
+## Breakpoints de Media Queries
+En el código CSS, se busco aplicar unicamente dos breakpoints, uno para celulares y otro para tables, pero conforme se visualizaba la disposicion de cada parte de la estructura html (sections,divs,etc), se aplico a ciertas partes otros reakpoints adicionales siguiendo lo siguiente:
+
+### 📱 **Celulares (≤ 480px)**
+Se aplican estilos específicos cuando el ancho de la pantalla es de 480 píxeles o menos:
+- `.nav-links`: Se organizan en columna y aumentan el tamaño de fuente.
+- `.buttons`: Se centran y agrandan.
+- `.product-info`: Se ajusta al 90% del ancho disponible.
+- `.product-dimensions`: Se organizan en columna.
+- `.gallery-product > img`: Se expanden a un 80% del ancho.
+- `.footer`: Se reorganiza en una sola columna.
+
+### 📱 **Celulares Medianos (≤ 600px)**
+- `.product-dimensions`: Cambia a diseño vertical con imagen en la parte superior.
+- `.container-areas`: Se reorganiza en columna.
+- `.container-shiping`: Se ajusta al 80% de ancho y aumenta el tamaño de fuente.
+
+### 📊 **Tablets (≤ 769px)**
+- `.nav-links`: Se reorganizan con mayor separación.
+- `.buttons`: Se vuelven apiladas verticalmente y más grandes.
+- `.product-info`: Se expande al 85% de ancho y se permite el ajuste flexible de los textos.
+- `.product-dimensions img`: Se agranda al 50% del ancho.
+- `.gallery-product > img`: Se expanden a un 40% del ancho.
+
+### 💻 **Laptops Pequeñas (≤ 800px)**
+- `.container-areas > div`: Se ajusta al 30% del ancho.
+- `.product-dimensions img`: Se redimensiona al 50% del ancho.
+- `.celda`: Se agranda para mejorar la legibilidad.
+
+### 🖥 **Laptops Medianas (≤ 1000px)**
+- `.types-shipping`: Se centra con más espacio entre elementos.
+
+### 🖥 **Laptops Grandes (≤ 1150px)**
+- `.gallery-product > img`: Se redimensiona al 40% del ancho.
